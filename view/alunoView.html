@@ -1,0 +1,118 @@
+<!--
+ View - Aluno
+-->
+<div ng-controller="AlunoController">
+
+    <!-- Controles de Inclusão e Consulta -->
+    <div class="row" style="margin-left: 10px;">
+        <div class="col-md-9 col-sm-6 col-xs-12">
+
+                    <div class="form-group mb-2 mr-sm-2 mb-sm-0">
+                        <label for="txtConsultar">Consulta de Alunos</label>
+                        <input type="text"  ng-model="alunoMatricula" class="form-control" id="txtConsultar" placeholder="Informe a matricula do aluno">
+                    </div>
+         </div>
+        <div class="col-md-1 col-sm-6 col-xs-12">
+            <button style="position: relative;top: 23px;" type="button" ng-click="findAluno()" class="btn btn-success">Consultar <i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+        <div class="col-md-1 col-sm-6 col-xs-12" style="margin-left: 23px;">
+            <button style="position: relative;top: 23px;" type="button" ng-click="incluir()" class="btn btn-success"><i class="fa fa-file-o" aria-hidden="true"></i> Incluir</button>
+        </div>
+    </div>
+
+
+    <!-- GRID -->
+    <div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Matricula</th>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="aluno in collectionAluno" >
+                            <th scope="row">{{aluno.idAluno}}</th>
+                            <td>{{aluno.matricula}}</td>
+                            <td>{{aluno.nome}}</td>
+                            <td>{{aluno.cpf}}</td>
+                            <td style="width: 20px;">
+                                <button ng-click="openWindow(aluno)" type="button" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                            </td>
+                            <td style="width: 20px;">
+                                <button ng-click="delete(aluno)" type="button" class="btn btn-success"><i class="fa " aria-hidden="true"></i>X</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL INSTITUIÇÃO-->
+    <!-- Modal -->
+    <div class="modal fade" id="modalAluno" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Aluno {{idAluno}}</h4>
+                </div>
+                <div class="modal-body">
+                    <form name="mainForm"">
+    
+
+ <div class="input-group col-md-offset-2 col-md-8">
+      <span class="input-group-addon">Matricula</span>
+      <input class="form-control" ng-model="aluno.matricula" id="matricula" name="matricula" ng-value="matricula" type="text" ">
+  </div>
+   <div class="input-group col-md-offset-2 col-md-8">
+      <span class="input-group-addon">Nome</span>
+      <input class="form-control" ng-model="aluno.nome" id="nome" name="nome" type="text" ng-value="nome">
+  </div>
+
+ <div class="input-group col-md-offset-2 col-md-8">
+      <span class="input-group-addon">Data Nascimento</span>
+      <input class="form-control" ng-model="aluno.dataNascimento" id="dataNascimento" name="dataNascimento" type="text" ng-value="dataNascimento">
+  </div>
+
+  <div class="input-group col-md-offset-2 col-md-8">
+      <span class="input-group-addon">CPF</span>
+      <input type="text" class="form-control" ng-model="aluno.cpf" id="cpf" name="cpf" ng-value="cpf">
+  </div>
+
+<div class="funkyradio">
+    <div class="funkyradio-success col-md-offset-2 col-md-4">
+        <input type="radio" name="radio" ng-model="aluno.ativo" id="radio3" ng-value="'S'"/>
+            <label for="radio3">Ativo</label>
+        </div>
+        <div class="funkyradio-danger col-md-offset-2 col-md-4">
+            <input type="radio" name="radio" ng-model="aluno.ativo"  id="radio4" ng-value="'N'"/>
+            <label for="radio4">Inativo</label>
+        </div>
+</div>
+<div>
+</div>
+</form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-fechar" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="salvarAluno()">Salvar</button>
+                </div>
+            </div>
+{{operacao}}
+        </div>
+    </div>
+
+</div>

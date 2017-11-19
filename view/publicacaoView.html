@@ -1,0 +1,129 @@
+<!--
+ View - Publicacao
+-->
+<div ng-controller="PublicacaoController">
+
+    <!-- Controles de Inclusão e Consulta -->
+    <div class="row" style="margin-left: 10px;">
+        <div class="col-md-9 col-sm-6 col-xs-12">
+
+                    <div class="form-group mb-2 mr-sm-2 mb-sm-0">
+                        <label for="txtConsultar">Consulta de Publicações</label>
+                        <input type="text"  ng-model="publicacaoTitulo" class="form-control" id="txtConsultar" placeholder="Informe o titulo da publicação para pesquisar">
+                    </div>
+         </div>
+        <div class="col-md-1 col-sm-6 col-xs-12">
+            <button style="position: relative;top: 23px;" type="button" ng-click="findPublicacao()" class="btn btn-success">Consultar <i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+        <div class="col-md-1 col-sm-6 col-xs-12" style="margin-left: 23px;">
+            <button style="position: relative;top: 23px;" type="button" ng-click="incluir()" class="btn btn-success"><i class="fa fa-file-o" aria-hidden="true"></i> Incluir</button>
+        </div>
+    </div>
+
+
+    <!-- GRID -->
+    <div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Tipo</th>
+                            <th>Titulo</th>
+                            <th>Data Publicação</th>
+                            <th>Ativo</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="publicacao in collectionPublicacao" >
+                            <th scope="row">{{publicacao.idPublicacao}}</th>
+                            <td>{{publicacao.tipo}}</td>
+                            <td>{{publicacao.titulo}}</td>
+                            <td>{{publicacao.dataPublicacao}}</td>
+                            <td>{{publicacao.ativo}}</td>
+                            <td style="width: 20px;">
+                                <button ng-click="openWindow(publicacao)" type="button" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                            </td>
+                            <td style="width: 20px;">
+                                <button ng-click="delete(publicacao)" type="button" class="btn btn-success"><i class="fa " aria-hidden="true"></i>X</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL INSTITUIÇÃO-->
+    <!-- Modal -->
+    <div class="modal fade" id="modalPublicacao" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Publicação {{idPublicacao}}</h4>
+                </div>
+                <div class="modal-body">
+                    <form name="mainForm"">
+    
+
+
+ <div class="input-group col-md-offset-2 col-md-8">
+      <span class="input-group-addon">TIPO</span>
+      <input class="form-control" ng-model="publicacao.tipo" id="sigla" name="sigla" type="text" ng-value="tipo"">
+  </div>
+
+  <div class="input-group col-md-offset-2 col-md-8">
+      <span class="input-group-addon">TITULO</span>
+      <input type="text" class="form-control" ng-model="publicacao.titulo" id="descricao" name="descricao" ng-value="titulo">
+  </div>
+
+    <div class="input-group col-md-offset-2 col-md-8">
+      <span class="input-group-addon">RESUMO</span>
+      <input type="text" class="form-control" ng-model="publicacao.resumo" id="descricao" name="descricao" ng-value="resumo">
+  </div>
+
+  <div class="input-group col-md-offset-2 col-md-8">
+      <span class="input-group-addon">PALAVRAS CHAVE</span>
+      <input type="text" class="form-control" ng-model="publicacao.palavasChave" id="descricao" name="descricao" ng-value="palavasChave">
+  </div>
+
+  <div class="input-group col-md-offset-2 col-md-8">
+      <span class="input-group-addon">DATA PUBLICAÇÃO</span>
+      <input type="text" class="form-control" ng-model="publicacao.dataPublicacao" id="descricao" name="descricao" ng-value="dataPublicacao">
+  </div>
+
+
+<div class="funkyradio">
+    <div class="funkyradio-success col-md-offset-2 col-md-4">
+        <input type="radio" name="radio" ng-model="publicacao.ativo" id="radio3" ng-value="'S'"/>
+            <label for="radio3">Ativo</label>
+        </div>
+        <div class="funkyradio-danger col-md-offset-2 col-md-4">
+            <input type="radio" name="radio" ng-model="publicacao.ativo"  id="radio4" ng-value="'N'"/>
+            <label for="radio4">Inativo</label>
+        </div>
+</div>
+<div>
+</div>
+</form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-fechar" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" ng-click="salvarPublicacao()">Salvar</button>
+                </div>
+            </div>
+{{operacao}}
+        </div>
+    </div>
+
+</div>

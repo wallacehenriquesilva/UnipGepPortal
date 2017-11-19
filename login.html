@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="UnipGEPAppLogin">
+<head>
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>UNIP GEP - Portal</title>
+
+    <!-- Bootstrap -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="style/custom.theme.css" rel="stylesheet">
+
+    <!-- Webcam.min.js -->
+  <script type="text/javascript" src="lib/webCam/webcam.min.js"></script>
+</head>
+
+<body class="nav-md">
+<div ng-controller="LoginController">
+    <div id="my_camera" class="col-md 6">
+    </div>
+
+    <input id="botao_capturar" type=button value="{{botao}}" ng-click="capturarImagem()" class="btn btnLogar">
+</div>
+
+<!-- jQuery -->
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Highcharts -->
+<script src="lib/highcharts/code/highcharts.js"></script>
+<script src="lib/highcharts/code/highcharts-3d.js"></script>
+<script src="config/highcharts.theme.config.js"></script>
+
+<!-- Angular -->
+<script src="lib/angular/angular.min.js"></script>
+
+<!-- Classe de sessão singleton -->
+<script src="singleton/User.js"></script>
+<!-- Aplicação Principal Angular
+<script src="main.js"></script>-->
+
+<!-- Controlador -->
+<script src="controller/loginController.js"></script>
+
+
+
+</body>
+</html>

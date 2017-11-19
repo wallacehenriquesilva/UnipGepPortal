@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="UnipGEPApp">
+<head>
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>UNIP GEP - Portal</title>
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="lib/highcharts/highcharts.js"></script>
+  <script src="lib/highcharts/exporting.js"></script>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <!-- Bootstrap -->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="style/custom.theme.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+<div class="container body" ng-controller="IndexController">
+    <div class="main_container">
+
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                    <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Unip - Portal</span></a>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <!-- menu profile quick info -->
+                <div class="profile">
+                    <div class="profile_pic">
+                        <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                    </div>
+                    <div class="profile_info">
+                        <span>Bem Vindo,</span>
+                        <h2>{{nome}}</h2>
+                    </div>
+                </div>
+                <!-- /menu profile quick info -->
+
+                <br />
+
+                <!-- sidebar menu -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section">
+                        <h3>&nbsp;</h3>
+                        <ul class="nav side-menu" ng-show="showModuloHome" ng-click="onClickShowHome()">
+                            <li><a><i class="fa fa-home"></i> Home</span></a></li>
+                        </ul>
+                        <ul class="nav side-menu" ng-show="showModuloInstituicao" ng-click="onClickShowInstituicao()">
+                            <li><a><i class="fa fa-university"></i> Instituição</span></a></li>
+                        </ul>
+                        <ul class="nav side-menu" ng-show="showModuloAluno" ng-click="onClickShowAluno()">
+                            <li><a><i class="fa fa-user"></i> Aluno</span></a></li>
+                        </ul>
+                        <ul class="nav side-menu" ng-show="showModuloOrientador" ng-click="onClickShowOrientador()">
+                            <li><a><i class="fa fa-user"></i> Orientador</span></a></li>
+                        </ul>
+                        <ul class="nav side-menu" ng-show="showModuloPublicacao" ng-click="onClickShowPublicacao()">
+                            <li><a><i class="fa fa-file-o"></i> Publicação</span></a></li>
+                        </ul>
+                        <ul class="nav side-menu" ng-show="showModuloCurso" ng-click="onClickShowCurso()">
+                            <li><a><i class="fa fa-clone"></i> Curso</span></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- /sidebar menu -->
+            </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <nav class="" role="navigation">
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- Carregamento dos Módulo -->
+        <div class="right_col" role="main">
+            <div ng-include="loadView"></div>
+        </div>
+        <!-- /Carregamento dos Módulo -->
+
+        <!-- Rodapé -->
+        <footer>
+            <div class="pull-right">Unip GEP Portal</div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /Rodapé -->
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Highcharts -->
+<script src="lib/highcharts/code/highcharts.js"></script>
+<script src="lib/highcharts/code/highcharts-3d.js"></script>
+<script src="config/highcharts.theme.config.js"></script>
+
+<!-- Angular -->
+<script src="lib/angular/angular.min.js"></script>
+
+<!-- Classe de sessão singleton -->
+<script src="singleton/User.js"></script>
+<!-- Aplicação Principal Angular -->
+<script src="main.js"></script>
+
+<!-- Controladores -->
+<script src="controller/indexController.js"></script>
+<script src="controller/indicadorController.js"></script>
+<script src="controller/instituicaoController.js"></script>
+<script src="controller/alunoController.js"></script>
+<script src="controller/orientadorController.js"></script>
+<script src="controller/publicacaoController.js"></script>
+<script src="controller/cursoController.js"></script>
+
+
+
+<!-- Page Util -->
+<script src="util/pageUtil.js"></script>
+
+</body>
+</html>

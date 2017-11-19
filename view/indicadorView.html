@@ -1,0 +1,102 @@
+<!--
+ View - Indicador
+-->
+<div ng-controller="IndicadorController">
+    <!-- Indicador 5 - Totalizadores Gerais da Instituição -->
+    <div class="row tile_count">
+        <!-- Total de Alunos -->
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-user"></i> Total de Alunos</span>
+            <div class="count" style="color: #3F51B5;">{{indicadorTotalAlunos}}</div>
+        </div>
+        <!-- Total de Orientadores -->
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-user"></i> Total de Orientadores</span>
+            <div class="count" style="color: #2196F3;">{{indicadorTotalOrientadores}}</div>
+        </div>
+        <!-- Total de Cursos -->
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-user"></i> Total de Cursos</span>
+            <div class="count" style="color: #4CAF50;">{{indicadorTotalCursos}}</div>
+        </div>
+        <!-- Total de Publicações -->
+        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+            <span class="count_top"><i class="fa fa-user"></i> Total de Publicações</span>
+            <div class="count" style="color: #FFC107;">{{indicadorTotalPublicacoes}}</div>
+        </div>
+    </div>
+    <!-- /top tiles -->
+
+    <div class="row">
+
+        <!-- Indicador 1 - Rank 5 Alunos com Publicações -->
+        <div class="col-md-8 col-sm-4 col-xs-12">
+            <div class="x_panel tile fixed_height_320">
+                <div class="x_title">
+                    <h2>Top 5 </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link" style="margin-left: 50px;"><i class="fa fa-chevron-up"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h4 style="text-align: center">Alunos por Publicação</h4>
+                    <div id="chartRankAlunosPublicacao" style="height: 250px"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicador 3 - Comparativo -->
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="x_panel tile fixed_height_320">
+                <div class="x_title">
+                    <h2>Comparativo</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link" style="margin-left: 50px;"><i class="fa fa-chevron-up"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h4 style="text-align: center">Alunos Ativos e Inativos</h4>
+                    <div id="chartComparativoAlunos" style="height: 200px"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicador 2 - Rank 5 Orientadores com Publicações -->
+        <div class="col-md-8 col-sm-4 col-xs-12">
+            <div class="x_panel tile fixed_height_320">
+                <div class="x_title">
+                    <h2>Top 5 </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link" style="margin-left: 50px;"><i class="fa fa-chevron-up"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h4 style="text-align: center">Orientadores por Publicação</h4>
+                    <div id="chartRankOrientadoresPublicacao" style="height: 200px"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicador 4 - Comparativo -->
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="x_panel tile fixed_height_320">
+                <div class="x_title">
+                    <h2>Comparativo</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link" style="margin-left: 50px;"><i class="fa fa-chevron-up"></i></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <h4 style="text-align: center">Orientadores Ativos e Inativos</h4>
+                    <div id="chartComparativoOrientadores" style="height: 200px"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
